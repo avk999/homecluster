@@ -28,7 +28,7 @@ SqliteDB and external DB are single points of failure so I've decided to run etc
 #### Network
 Cluster uses `flannel` CNI - that's the default and seems to be suited my situation pretty well. `K3s` contains a built-in load balancer service controller (can be replaced by metalLB for example).
 
-One of the pains of the previous setup was need to remember what port (and sometimes what host) stuff listens on. Zwave2MQTT sits on http://rpi2:8999 - not easy to remember. So I delegated one of my domains to `DigitalOcean` and set up `ExtDNS` controller to manage records. Now I should use http://zwave2mqtt.mycluster.net - much better. 
+One of the pains of the previous setup was need to remember what port (and sometimes what host) stuff listens on. Zwave2MQTT sits on http://rpi2:8999 - not easy to remember. So I delegated one of my domains to `DigitalOcean` and set up `ExtDNS` controller to manage records. Now I should be able to use http://zwave2mqtt.mycluster.net - much better. 
 Of course all A records return private addresses of my cluster machines - nginx uses loadbalancer service to listen on all 3 nodes.
 
 Certificate manager was configured to use letsencrypt-issuer. So if `Ingress` contains `tls` data a certificate from LE will be auto-requested and https will be enabled. That was surprisingly easy to set up.

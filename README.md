@@ -14,7 +14,7 @@ So ended up with Asus Vivo mediacomputer, Fujitsu mediabox and HP Elite 800. The
 Now all machines have 0.8-2T HDD each, 1GbE Ethernet, 8Gb RAM. They are powered through a smart socket which reports that total power usage is between 40-100 Watt.
 ## Platform
 ### OS
-I use Ubuntu 22.04LTS as a base OS. There are no specific reasons for that, just a well-supported and convenient distro. Machines are installed as 'ubuntu-server'. For disk setup I've created two VGs - vg_root and vg_opt using both SSDs. Root is 100Gi, rest goes to opt. The only exception is Asus which was installed long time ago and has a big media collecton. So Asus has a single VG with 50Gb root and 800Gb opt.
+I use Ubuntu 22.04LTS as a base OS. There are no specific reasons for that, just a well-supported and convenient distro. Machines are installed as 'ubuntu-server'. For disk setup I've created two VGs - vg_root as a partition of one ssd and vg_opt as the rest. Root is 100Gi, rest goes to opt. The only exception is Asus which was installed long time ago and has a big media collecton. So Asus has a single VG with 50Gb root and 800Gb opt.
 Smarthome has both zwave and zigbee networks so Asus has two USB controllers for those networks.
 ### Kubernetes
 I've decided to go with K3S, mostly to save RAM. I could go with vanilla k8s as well as I understand.
